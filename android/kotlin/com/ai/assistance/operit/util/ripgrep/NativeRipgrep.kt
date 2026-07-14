@@ -12,13 +12,21 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
 
-package com.gagirl.ga_niu.operit.services
+package com.ai.assistance.operit.util.ripgrep
 
-object FloatingChatService {
-    fun start(context: android.content.Context) {}
-    fun stop() {}
-    fun isRunning(): Boolean = false
+internal object NativeRipgrep {
+    init {
+        System.loadLibrary("operit_ripgrep")
+    }
+
+    @JvmStatic
+    external fun searchJson(
+        path: String,
+        patterns: Array<String>,
+        filePattern: String,
+        caseInsensitive: Boolean,
+        literal: Boolean,
+        contextLines: Int,
+        maxResults: Int
+    ): String
 }
-
-enum class FloatingMode { BALL, WINDOW, FULLSCREEN }
-const val EXTRA_AUTO_ENTER_VOICE_CHAT = "extra_auto_enter_voice_chat"

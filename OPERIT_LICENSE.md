@@ -1,21 +1,28 @@
 # Operit AI 集成声明
 
-本软件集成了 [Operit AI](https://github.com/AAswordman/Operit) 的部分代码，遵循 LGPLv3 协议。
+本软件（嘎妞 GaNiu）集成了 [Operit AI](https://github.com/AAswordman/Operit) 的部分代码，遵循 LGPLv3 协议。
 
 ## 集成方式
-- **动态链接(.so)**：llama, MNN, QuickJS, DragonBones, FBX, MMD, streamnative → 闭源安全
-- **源码集成(Kotlin)**：services/, util/ripgrep/ → 按LGPLv3开源
-- **资源集成**：mcp_bridge/, github/, shower-server.jar → 按各自协议
 
-## LGPLv3 要求
-- 未修改的Operit代码保持原有许可证
-- 嘎妞商业代码闭源
-- 用户可获取Operit源码：https://github.com/AAswordman/Operit
+### 1. 静态集成（本仓库公开的部分）
+按 LGPLv3 §2 要求开源：
+- **Kotlin 源码**：`services/TermuxCommandResultService.kt`, `util/ripgrep/NativeRipgrep.kt` — 保留 Operit 原始 `com.ai.assistance.operit.*` package，100% 原版
+- **资源文件**：`assets/operit/{mcp_bridge, github, shower}` — 100% 原版，未修改
 
-## 动态链接库(.so)
-本应用使用了以下动态链接库，未修改源码，仅通过JNI调用：
-- liboperit_ripgrep.so
-- libsherpa-mnn-jni.so
-（其他.so库待编译集成）
+### 2. 动态链接（.so，按 §4 无需开源）
+- `liboperit_ripgrep.so`
+- `libsherpa-mnn-jni.so`
+- 其他 .so 库通过 JNI 调用，未修改源码
 
-最后更新：2026-07-12
+## LGPLv3 合规
+
+- 修改过的 Operit 代码 → 全部开源（本仓库）
+- 未修改的 Operit 代码 → 保留原有许可证（本仓库）
+- 嘎妞自研代码 → 闭源商业软件，不受 LGPLv3 约束
+- 用户可通过本仓库或上游获取所集成的 Operit 源码
+
+## 完整源码
+
+上游项目：https://github.com/AAswordman/Operit
+
+最后更新：2026-07-14

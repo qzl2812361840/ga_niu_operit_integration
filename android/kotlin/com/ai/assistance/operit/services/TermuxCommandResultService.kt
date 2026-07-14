@@ -12,11 +12,12 @@
  * SPDX-License-Identifier: LGPL-3.0-or-later
  */
 
-package com.gagirl.ga_niu.operit.services
+package com.ai.assistance.operit.services
 
 import android.app.IntentService
 import android.content.Intent
-import com.gagirl.ga_niu.operit.util.AppLogger
+import com.ai.assistance.operit.util.AppLogger
+import com.ai.assistance.operit.core.tools.system.AndroidShellExecutor.CommandResult
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
