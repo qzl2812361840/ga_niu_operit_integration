@@ -1,0 +1,36 @@
+# 构建产物
+build/
+*.apk
+*.aab
+
+# IDE
+.idea/
+.vscode/
+*.iml
+.gradle/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 密钥（安全防线，本仓库不放任何密钥/凭证）
+*.pem
+*.key
+*.jks
+*.keystore
+.env
+.env.*
+!.env.example
+
+# 日志
+*.log
+logs/
+
+# Node（如果本地测试 mcp_bridge）
+node_modules/
+
+# Python（github 脚本本地测试）
+__pycache__/
+*.pyc
+venv/
+.venv/
